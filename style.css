@@ -1,13 +1,18 @@
-.todo-list {
-  max-width: 400px;
+#todoApp {
+  max-width: 800px;
   margin: 0 auto;
+  padding: 5px 20px 30px;
+  background-color: antiquewhite;
+  border-radius: 0.75rem;
 }
 .todo-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  border-bottom: 1px solid #ddd;
+  border: 1px solid #333;
+  background-color: #9fc5ca;
+  border-radius: 0.75rem;
   margin-top: 5%;
 }
 .todo-item:hover {

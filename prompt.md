@@ -1,37 +1,56 @@
 # Interactive Todo List
 
-You are tasked with implementing an interactive todo list using JavaScript and DOM manipulation. You are provided with an HTML file containing the basic structure of the todo list, including an input field, an "Add" button, and a div with the id "todoItems" where the todo items will be displayed.
-Requirements:
+You are tasked with implementing an interactive todo list using JavaScript and DOM manipulation. You have been provided with an HTML file containing the basic structure and styling for the todo list, including an input field, an "Add" button, and a div with the id "todoItems" where the todo items will be displayed.
 
-Use the following data array as the initial set of todos:
+## Starting Data & Utilities
 
 ```javascript
-let todos = [
+// Initial todos
+const todos = [
     { id: 1, text: "Buy groceries", completed: false },
     { id: 2, text: "Finish homework", completed: true },
     { id: 3, text: "Call mom", completed: false }
 ];
+
+// Utility function for generating new todo IDs
+const generateId = (() => {
+    let counter = 4;  // Starting after existing todos
+    return () => counter++;
+})();
 ```
 
-1. Display the existing todos from the data array when the page loads.
-2. Implement functionality to add new todos:
-   - When the user enters text in the input field and clicks the "Add" button, a new todo should be added to the list.
-   - The input field should be cleared after adding a todo.
+## Requirements
 
-3. Each todo item should have:
+1. Display Todos
+   - Display all todos from the data array when the page loads
+   - Each todo should show:
+     - A checkbox showing its completion status
+     - The todo text
+     - A delete button
 
-   - A checkbox to toggle its completion status
-   - The todo text
-   - A delete button
+2. Add New Todos
+   - When the user enters text and clicks "Add":
+     - Create a new todo object using the provided structure
+     - Use generateId() for the new todo's ID
+     - Add it to the todos array
+     - Display it in the list
+     - Clear the input field
 
-4. Implement functionality to toggle a todo's completion status:
+3. Toggle Completion
+   - Clicking a todo's checkbox should toggle its completed status
+   - Completed todos should show with strikethrough text
+   - Update both the display and the todo object's completed status
 
-    - When a user clicks on a todo's checkbox, its completion status should toggle between completed and not completed.
-    - Completed todos should have a line-through style applied to their text.
+4. Delete Todos
+   - Clicking a todo's delete button should remove it from both:
+     - The todos array
+     - The display
 
-5. Implement functionality to delete a todo:
-   - When a user clicks the delete button on a todo, that todo should be removed from the list.
+## Notes
 
-6. Ensure that the UI stays in sync with the data model (the todos array) at all times.
+- Basic error handling (empty todos) is not required
+- Local storage/persistence is not needed
+- Focus on core functionality and clean code
+- CSS styling is provided - focus on JavaScript implementation
 
-Your task is to write the JavaScript code that implements these features using DOM manipulation techniques. Focus on creating a solution that is both functional and demonstrates good practices in handling user interactions and updating the UI.
+HTML structure is provided - you only need to implement the JavaScript functionality.
