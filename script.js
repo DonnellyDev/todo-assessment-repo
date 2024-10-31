@@ -6,10 +6,10 @@ const todos = [
 ];
 
 // ID generator
-const generateId = (() => {
-  let counter = 4;
-  return () => counter++;
-})();
+const generateId = () => {
+  let counter = todos.length + 1;
+  return counter++;
+};
 
 function displayTodos() {
   // display ToDos
