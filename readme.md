@@ -13,10 +13,8 @@ const todos = [
 ];
 
 // Utility function for generating new todo IDs
-const generateId = (() => {
-    let counter = 4;  // Starting after existing todos
-    return () => counter++;
-})();
+const generateId = () =>  todos.length+1 ;
+;
 ```
 
 ## Requirements
